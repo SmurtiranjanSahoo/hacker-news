@@ -1,0 +1,25 @@
+.footer-container {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid #ff6600;
+}
+.footer-text {
+  font-size: 10.66px;
+  cursor: pointer;
+}
+.footer-search {
+  display: flex;
+  margin: 20px 0;
+}
+.footer-search p {
+  font-size: 13.33px;
+  color: #828282;
+  margin-right: 5px;
+}
+.footer-search input {
+  width: 135px;
+  height: 21px;
+}
