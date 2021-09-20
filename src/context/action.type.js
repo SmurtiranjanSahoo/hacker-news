@@ -1,0 +1,2 @@
+export const FETCH_TOPSTORIES = "FETCH_TOPSTORIES";
+export const FETCH_NEWS = "FETCH_NEWS";
