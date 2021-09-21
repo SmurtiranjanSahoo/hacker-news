@@ -20,18 +20,22 @@
   border: 1px solid #ffffff;
 }
 .navbar-primary-span,
-.navbar-secondary p {
+.navbar-secondary a {
   font-size: 13.33px;
   font-family: Verdana, Geneva, sans-serif;
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: #000000;
+  text-decoration: none;
 }
-.navbar-primary-span span,
+.navbar-primary-span a,
 .navbar-secondary p {
   margin-right: 4.65px;
+  color: #000000;
+  text-decoration: none;
 }
-.navbar-primary-span span:nth-child(1) {
+.navbar-primary-span a:nth-child(1) {
   font-size: 13.33px;
   font-weight: 600;
   font-family: Verdana, Geneva, sans-serif;
