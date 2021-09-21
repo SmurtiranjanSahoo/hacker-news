@@ -13,17 +13,21 @@ const News = ({ index, news }) => {
         <span>{index + 1}.</span>
       </div>
       <div className="news">
-        <a target="_blank" href={news.url} className="news-title">
-          {news.title}{" "}
+        <a
+          target="_blank"
+          href={news?.url ? news?.url : "/"}
+          className="news-title"
+        >
+          {news?.title}{" "}
           <span className="news-website">
-            ({`https://${news.url?.slice(8).split("/")[0]}`})
+            {news?.url ? `(https://${news.url?.slice(8).split("/")[0]})` : ""}
           </span>
         </a>
         <p className="news-details">
           {" "}
-          {news.score} points by {news.by}{" "}
-          {timeAgo.format(new Date() - new Date(news.time))}| hide |{" "}
-          {news.descendants} comments
+          {news?.score} points by {news?.by}{" "}
+          {timeAgo?.format(Date.now() - news?.time)}| hide | {news?.descendants}{" "}
+          comments
         </p>
       </div>
     </div>
