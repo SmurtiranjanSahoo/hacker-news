@@ -1,0 +1,16 @@
+export const initialState = {
+  topStories: [],
+  topStoriesNews: [],
+  newStories: [],
+  newStoriesNews: [],
+  pastStories: [],
+  pastStoriesNews: [],
+  askStories: [],
+  askStoriesNews: [],
+  showStories: [],
+  showStoriesNews: [],
+  jobsStories: [],
+  jobsStoriesNews: [],
+  commentsStories: [],
+  commentsStoriesNews: [],
+};
