@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 .wrapper {
@@ -22,4 +23,27 @@
   border: none;
   background: none;
   cursor: pointer;
+}
+.login-wrapper {
+  padding: 10px;
+}
+.login-wrapper p {
+  font-size: 13.33px;
+}
+.login-wrapper-form h4,
+.login-wrapper-form label {
+  font-size: 13.33px;
+  margin: 20px 0;
+}
+.login-wrapper-form-div label {
+  margin-right: 3px;
+}
+.login-wrapper-form div {
+  margin: 5px 0;
+}
+.login-wrapper-form button {
+  margin: 20px 0;
+}
+.login-wrapper a {
+  font-size: 13.33px;
 }
