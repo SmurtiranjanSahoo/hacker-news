@@ -1,55 +1,37 @@
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useReducer } from "react";
 import "./App.css";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import newsReducer from "./context/reducer";
 import { contextNews } from "./context/context";
-import { fetchTopStories, fetchNews } from "./api/apicalls";
+import { initialState } from "./context/initialState";
 //components
-import Navbar from "./Components/Navbar/Navbar";
-import News from "./Components/News/News";
-import Footer from "./Components/Footer/Footer";
+import Home from "./Pages/Home";
+import Ask from "./Pages/Ask";
+import Comments from "./Pages/Comments";
+import Jobs from "./Pages/Jobs";
+import New from "./Pages/New";
+import Past from "./Pages/Past";
+import Show from "./Pages/Show";
+import Login from "./Pages/Login";
 
 const App = () => {
-  const [newsCount, setNewsCount] = useState(30);
-  const [newsStartCount, setNewsStartCount] = useState(0);
-  const initialState = {
-    topStories: [],
-    topStoriesNews: [],
-  };
   const [state, dispatch] = useReducer(newsReducer, initialState);
-  const { topStories, topStoriesNews } = state;
-
-  useEffect(() => {
-    fetchTopStories(dispatch);
-  }, []);
-
-  useEffect(() => {
-    topStories.map((newsid, i) => {
-      if (i + newsStartCount < newsCount) {
-        fetchNews(dispatch, newsid);
-      }
-    });
-  }, [topStories, newsCount]);
 
   return (
     <contextNews.Provider value={{ state, dispatch }}>
-      <div className="wrapper">
-        <div className="container">
-          <Navbar />
-          {topStoriesNews.map((news, i) => {
-            return <News news={news} index={i} key={i} />;
-          })}
-          <button
-            className="more-btn"
-            onClick={() => {
-              setNewsCount((prev) => prev + 30);
-              setNewsStartCount((prev) => prev + 30);
-            }}
-          >
-            More
-          </button>
-          <Footer />
-        </div>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/ask" component={Ask} />
+          <Route exact path="/comments" component={Comments} />
+          <Route exact path="/jobs" component={Jobs} />
+          <Route exact path="/new" component={New} />
+          <Route exact path="/past" component={Past} />
+          <Route exact path="/show" component={Show} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/submit" component={Login} />
+        </Switch>
+      </Router>
     </contextNews.Provider>
   );
 };
