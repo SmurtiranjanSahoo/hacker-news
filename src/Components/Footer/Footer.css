@@ -8,6 +8,7 @@
 }
 .footer-text {
   font-size: 10.66px;
+  text-align: center;
   cursor: pointer;
 }
 .footer-search {
@@ -22,4 +23,10 @@
 .footer-search input {
   width: 135px;
   height: 21px;
+}
+
+@media screen and (max-width: 425px) {
+  .footer-text {
+    padding: 0 10px;
+  }
 }

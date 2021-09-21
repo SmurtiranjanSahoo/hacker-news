@@ -47,3 +47,12 @@
 .login-wrapper a {
   font-size: 13.33px;
 }
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 0px;
+  }
+  .container {
+    width: 100%;
+  }
+}
